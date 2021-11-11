@@ -1,0 +1,40 @@
+<a href="/" >logout</a> <br>
+<a href="/patientappointmentdetail?type=expire">expire appointment</a> <br> <br>
+<a href="/patientappointmentdetail?type=upcomming">next appointment</a> <br> <br>
+<a href="/patientappointmentdetail?type=today">today appointment</a> <br> <br>
+<a href="/patientappointmentdetail?type=all"> all appointment</a> <br> <br>
+<h1 align='center'> Patient appointment</h1>
+
+
+<table align="center" border="2" >
+    
+    <tr>
+        
+      <th>id</th> 
+        <th>patientname</th>
+        <th>dep</th>
+        <th>date</th>
+        <th>time</th>
+    </tr>
+    {%for i in data%}
+    
+
+    <tr align="center">
+       
+        <td>{{i.id}}</td>
+        <td>{{i.patientname}}</td>
+        <td>{{i.dep}}</td>
+        <td>{{i.date}}</td>
+        <td>{{i.time}}</td>
+        <td> <a href="v/{{i.id}}" >view</a> </td>
+        <td></td>
+        <td> <a href="update/{{i.id}}" >update</a> </td>
+        <td> <a href="delete/{{i.id}}" >delete</a> </td>
+        <td></td>
+        <td> <a href="check/{{i.id}}" > check last prescription</a> </td>
+    </tr>
+
+    {%endfor%}
+
+</table>
+

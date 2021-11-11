@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appoinment</title>
+</head>
+
+<body>
+  {% for i in data%}
+{%if i.prescription%}
+    <h4 ><a href="download/{{i.id}}" > download prescription date  :{{i.date}}</a> </h4>
+{%endif%}
+{%endfor%}
+    <h1 align="center">Take new Appointment</h1>
+    <h2 align="center">TIME 10:00AM TO 09:00PM</h2>
+  <br>
+    <form method="POST" align="center">
+        {% csrf_token%}
+         
+        <!--   {{form.as_p}}   -->
+    
+    <label for="cars">Choose a departament:</label>
+    <select name="dep" id="cars">
+      <option value="Cardiologist">Cardiologist</option>
+      <option value="Dermatologists">Dermatologists</option>
+      <option value="Allergists">Allergists</option>
+      <option value="Anesthesiologists">Anesthesiologists</option>
+    </select>
+    <br><br>
+     date: <input type="date" name="date"><br><br>
+     time: <input type="time" name="time"><br><br>
+      
+
+
+        <input type="submit" name="submit">
+
+    </form>
+
+
+    
